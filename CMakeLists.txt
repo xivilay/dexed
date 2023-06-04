@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(PROJECT_NAME "Dexed")
 set(VERSION "0.9.6")
-set(FORMATS "VST3" "Standalone") # Standalone Unity VST VST3 AU AUv3 AAX LV2
+set(FORMATS "VST3" "Standalone" "CLAP") # Standalone Unity VST VST3 AU AUv3 AAX LV2 CLAP
 
 project(${PROJECT_NAME} VERSION ${VERSION})
 
@@ -71,11 +71,15 @@ juce_add_plugin(${PROJECT_NAME}
 
 juce_generate_juce_header(${PROJECT_NAME})
 juce_add_module(${LIBS_DIR}/surgesynthteam_tuningui) # tuning ui lib
-add_subdirectory(${LIBS_DIR}/clap-juce-extensions) # "*.clap" format support
-clap_juce_extensions_plugin(TARGET ${PROJECT_NAME}
-    CLAP_ID "com.digital-suburban.dexed"
-    CLAP_FEATURES instrument FM DX7
-)
+
+if("CLAP" IN_LIST FORMATS)
+    add_subdirectory(${LIBS_DIR}/clap-juce-extensions) 
+    clap_juce_extensions_plugin(TARGET ${PROJECT_NAME}
+        CLAP_ID "com.digital-suburban.dexed"
+        CLAP_FEATURES instrument FM DX7
+    )
+endif()
+
 target_include_directories(${PROJECT_NAME} PRIVATE ${LIBS_DIR}/MTS-ESP/Client) # microtuning lib
 target_include_directories(${PROJECT_NAME} PRIVATE ${LIBS_DIR}/tuning-library/include) # tuning lib
 

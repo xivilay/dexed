@@ -23,9 +23,11 @@
 
 #include <BinaryData.h>
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "../JuceLibraryCode/JuceHeader.hp
 
-#include "clap-juce-extensions/clap-juce-extensions.h"
+#if __has_include(<clap-juce-extensions/clap-juce-extensions.h>)
+    #include <clap-juce-extensions/clap-juce-extensions.h>
+#endif
 
 #include "msfa/controllers.h"
 #include "msfa/dx7note.h"
