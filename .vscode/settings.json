@@ -1,0 +1,22 @@
+{
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.ctestArgs": [
+        "--verbose"
+    ],
+    "cmake.configureOnOpen": true,
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/build/juce_binarydata_Dexed_BinaryData/JuceLibraryCode/",
+        "${workspaceFolder}/build/DexedDev_artefacts/JuceLibraryCode/",
+        "${workspaceFolder}/build/Dexed_artefacts/JuceLibraryCode/",
+        "${workspaceFolder}/libs/juce/modules",
+        "${workspaceFolder}/libs/clap-juce-extensions/include/",
+        "${workspaceFolder}/libs/MTS-ESP/Client/",
+        "${workspaceFolder}/libs/tuning-library/include/",
+        "${workspaceFolder}/libs/clap-juce-extensions/clap-libs/clap/include/",
+        "${workspaceFolder}/libs/clap-juce-extensions/clap-libs/clap-helpers/include/",
+        "${workspaceFolder}/libs/"
+    ],
+    "C_Cpp.autoAddFileAssociations": false
+}
