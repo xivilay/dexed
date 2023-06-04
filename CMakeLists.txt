@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(PROJECT_NAME "Dexed")
 set(VERSION "0.9.6")
-set(FORMATS "VST3" "Standalone" "CLAP") # Standalone Unity VST VST3 AU AUv3 AAX LV2 CLAP
+set(FORMATS "Standalone" "CLAP") # Standalone Unity VST VST3 AU AUv3 AAX LV2 CLAP
 
 project(${PROJECT_NAME} VERSION ${VERSION})
 
@@ -140,6 +140,7 @@ juce_add_binary_data(${PROJECT_NAME}_BinaryData
     "${RSC_DIR}/OperatorEditor_574x436.png"
     "${RSC_DIR}/Scaling_36_26.png"
     "${RSC_DIR}/Slider_52x52.png"
+    "${RSC_DIR}/SliderBackground_54x24.png"
     "${RSC_DIR}/Switch_64x64.png"
     "${RSC_DIR}/Switch_96x52.png"
     "${RSC_DIR}/SwitchLighted_48x26.png"

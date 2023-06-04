@@ -68,6 +68,7 @@ DXLookNFeel::DXLookNFeel() {
     imageSwitchOperator = ImageCache::getFromMemory(BinaryData::Switch_64x64_png, BinaryData::Switch_64x64_pngSize); // 2x
     imageButton = ImageCache::getFromMemory(BinaryData::ButtonUnlabeled_50x30_png, BinaryData::ButtonUnlabeled_50x30_pngSize);
     imageSlider = ImageCache::getFromMemory(BinaryData::Slider_52x52_png, BinaryData::Slider_52x52_pngSize); // 2x
+    imageSliderBackground = ImageCache::getFromMemory(BinaryData::SliderBackground_54x24_png, BinaryData::SliderBackground_54x24_pngSize);
     imageScaling = ImageCache::getFromMemory(BinaryData::Scaling_36_26_png, BinaryData::Scaling_36_26_pngSize); // 2x
     imageLight = ImageCache::getFromMemory(BinaryData::Light_28x28_png, BinaryData::Light_28x28_pngSize); // 2x
     imageLFO = ImageCache::getFromMemory(BinaryData::LFO_36_26_png, BinaryData::LFO_36_26_pngSize);
@@ -131,6 +132,10 @@ DXLookNFeel::DXLookNFeel() {
             imageSlider = findImage(path);
             continue;
         }
+        if (name == "SliderBackground_54x24.png") {
+            imageSliderBackground = findImage(path);
+            continue;
+        }
         if (name == "Scaling_36_26.png") {
             imageScaling = findImage(path);
             continue;
@@ -161,7 +166,7 @@ Typeface::Ptr DXLookNFeel::getTypefaceForFont(const Font &) {
 void DXLookNFeel::drawRotarySlider( Graphics &g, int x, int y, int width, int height, float sliderPosProportional,
      float rotaryStartAngle, float rotaryEndAngle,  Slider &slider ) {
      if ( imageKnob.isNull() ) {
-         LookAndFeel_V3::drawRotarySlider(g, x, y, width, height, sliderPosProportional, rotaryStartAngle, rotaryEndAngle, slider);
+         LookAndFeel_V4::drawRotarySlider(g, x, y, width, height, sliderPosProportional, rotaryStartAngle, rotaryEndAngle, slider);
          return;
      }
 
@@ -180,7 +185,7 @@ void DXLookNFeel::drawRotarySlider( Graphics &g, int x, int y, int width, int he
 
 void DXLookNFeel::drawToggleButton(Graphics& g, ToggleButton& button, bool isMouseOverButton, bool isButtonDown) {
     if ( imageSwitch.isNull() ) {
-        LookAndFeel_V3::drawToggleButton(g, button, isMouseOverButton, isButtonDown);
+        LookAndFeel_V4::drawToggleButton(g, button, isMouseOverButton, isButtonDown);
         return;
     }
 
@@ -189,7 +194,7 @@ void DXLookNFeel::drawToggleButton(Graphics& g, ToggleButton& button, bool isMou
     if( lb )
     {
         if( imageSwitchLighted.isNull() ) {
-            LookAndFeel_V3::drawToggleButton(g, button, isMouseOverButton, isButtonDown);
+            LookAndFeel_V4::drawToggleButton(g, button, isMouseOverButton, isButtonDown);
             return;
         }
         g.drawImage(imageSwitchLighted, 0, 0, 48, 26, 0, button.getToggleState() ? 0 : 26, 48, 26);
@@ -201,7 +206,7 @@ void DXLookNFeel::drawToggleButton(Graphics& g, ToggleButton& button, bool isMou
 
 void DXLookNFeel::drawButtonBackground(Graphics &g, Button &button, const Colour& backgroundColour, bool isMouseOverButton, bool isButtonDown) {
     if ( imageButton.isNull() ) {
-        LookAndFeel_V3::drawButtonBackground(g, button, backgroundColour, isMouseOverButton, isButtonDown);
+        LookAndFeel_V4::drawButtonBackground(g, button, backgroundColour, isMouseOverButton, isButtonDown);
         return;
     }
 
@@ -213,19 +218,29 @@ void DXLookNFeel::drawButtonBackground(Graphics &g, Button &button, const Colour
     g.drawImage(imageButton, w-3, 0,   3,  30,   47, isButtonDown ? 30 : 0, 47, 30);
 }
 
-void DXLookNFeel::drawLinearSliderBackground (Graphics&, int x, int y, int width, int height,
-                                         float sliderPos, float minSliderPos, float maxSliderPos,
-                                              const Slider::SliderStyle st, Slider& s) {
-    // NOP
+void DXLookNFeel::drawLinearSlider(Graphics& g, int x, int y, int width, int height, float sliderPos,
+                                   float minSliderPos, float maxSliderPos, const Slider::SliderStyle style,
+                                   Slider& slider) {
+    LookAndFeel_V2::drawLinearSlider(g, x, y, width, height, sliderPos, minSliderPos, maxSliderPos, style, slider);
 }
 
-void DXLookNFeel::drawLinearSliderThumb (Graphics& g, int x, int y, int width, int height,
-                                    float sliderPos, float minSliderPos, float maxSliderPos,
-                                         const Slider::SliderStyle st, Slider& s) {
-    // TODO: find out why the V4 LookNFeel doesn't call this
-    // TRACE("draw slider"); 
-    if ( imageSlider.isNull() ) {
-        LookAndFeel_V3::drawLinearSliderThumb(g, x, y, width, height, sliderPos, minSliderPos, maxSliderPos, st, s);
+void DXLookNFeel::drawLinearSliderBackground(Graphics& g, int x, int y, int width, int height, float sliderPos,
+                                             float minSliderPos, float maxSliderPos, const Slider::SliderStyle st,
+                                             Slider& s) {
+    if (imageSliderBackground.isNull()) {
+        LookAndFeel_V2::drawLinearSliderBackground(g, x, y, width, height, sliderPos, minSliderPos, maxSliderPos, st,
+                                                   s);
+        return;
+    }
+
+    g.drawImage(imageSliderBackground, 0, 0, 54, 24, 0, 0, 54, 24);
+}
+
+void DXLookNFeel::drawLinearSliderThumb(Graphics& g, int x, int y, int width, int height, float sliderPos,
+                                        float minSliderPos, float maxSliderPos, const Slider::SliderStyle st,
+                                        Slider& s) {
+    if (imageSlider.isNull()) {
+        LookAndFeel_V2::drawLinearSliderThumb(g, x, y, width, height, sliderPos, minSliderPos, maxSliderPos, st, s);
         return;
     }
 
@@ -243,7 +258,7 @@ void DXLookNFeel::positionComboBoxText(ComboBox& box, Label& label) {
         return;
     }
 
-    LookAndFeel_V3::positionComboBoxText(box, label);
+    LookAndFeel_V4::positionComboBoxText(box, label);
 }
 
 Colour DXLookNFeel::fillColour = Colour(77,159,151);

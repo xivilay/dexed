@@ -21,7 +21,7 @@
 #ifndef DXLOOKNFEEL_H_INCLUDED
 #define DXLOOKNFEEL_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include <JuceHeader.h>
 
 class LightedToggleButton : public ToggleButton {
 public:
@@ -35,7 +35,7 @@ class DXLookNFeel : public LookAndFeel_V4 {
 public:
     DXLookNFeel();
     
-    Image imageKnob, imageSwitch, imageSwitchLighted, imageButton, imageSlider, imageScaling, imageLight, imageLFO;
+    Image imageKnob, imageSwitch, imageSwitchLighted, imageButton, imageSlider, imageSliderBackground, imageScaling, imageLight, imageLFO;
     Image imageSwitchOperator;
     Image imageOperator, imageGlobal;
 
@@ -49,6 +49,9 @@ public:
     virtual void drawLinearSliderThumb (Graphics&, int x, int y, int width, int height,
                                 float sliderPos, float minSliderPos, float maxSliderPos,
                                 const Slider::SliderStyle, Slider&) override;
+    virtual void drawLinearSlider (Graphics&, int x, int y, int width, int height,
+                           float sliderPos, float minSliderPos, float maxSliderPos,
+                           const Slider::SliderStyle, Slider&) override;
     virtual void drawButtonBackground (Graphics&, Button&, const Colour& backgroundColour,
                                bool isMouseOverButton, bool isButtonDown) override;
     //virtual Font getTextButtonFont(TextButton&, int buttonHeight) override;
