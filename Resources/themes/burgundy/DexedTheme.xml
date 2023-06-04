@@ -1,0 +1,36 @@
+<dexedTheme>
+    <!-- <colour id="TextButton::buttonColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="TextButton::textColourOnId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="TextButton::textColourOffId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="Slider::rotarySliderOutlineColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="Slider::rotarySliderFillColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="AlertWindow::backgroundColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="AlertWindow::textColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="TextEditor::backgroundColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="TextEditor::textColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="TextEditor::highlightColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="TextEditor::outlineColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="ComboBox::backgroundColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="ComboBox::textColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="ComboBox::buttonColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="PopupMenu::backgroundColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="PopupMenu::textColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="PopupMenu::highlightedTextColourId" value="0x77FFFFFF" /> -->
+    <!-- <colour id="PopupMenu::highlightedBackgroundColourId" value="0x77FFFFFF" /> -->
+    <colour id="Dexed::backgroundId" value="0x55FFFFFF" />
+    <colour id="Dexed::fillColourId" value="0x55771111" />
+
+    <image id="ButtonUnlabeled_50x30.png" path="ui/ButtonUnlabeled_50x30.png" />
+    <image id="GlobalEditor_1728x288.png" path="ui/GlobalEditor_1728x288.png" />
+    <image id="HelpButton.png" path="ui/HelpButton.png" />
+    <image id="Knob_68x68.png" path="ui/Knob_68x68.png" />
+    <image id="LFO_36_26.png" path="ui/LFO_36_26.png" />
+    <image id="Light_28x28.png" path="ui/Light_28x28.png" />
+    <image id="Meter_140x8.png" path="ui/Meter_140x8.png" />
+    <image id="OperatorEditor_574x436.png" path="ui/OperatorEditor_574x436.png" />
+    <image id="Scaling_36_26.png" path="ui/Scaling_36_26.png" />
+    <image id="Slider_52x52.png" path="ui/Slider_52x52.png" />
+    <image id="Switch_64x64.png" path="ui/Switch_64x64.png" />
+    <image id="Switch_96x52.png" path="ui/Switch_96x52.png" />
+    <image id="SwitchLighted_48x26.png" path="ui/SwitchLighted_48x26.png" />
+</dexedTheme>

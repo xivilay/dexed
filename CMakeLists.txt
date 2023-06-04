@@ -64,8 +64,8 @@ juce_add_plugin(${PROJECT_NAME}
     IS_SYNTH TRUE
     NEEDS_MIDI_INPUT TRUE
     NEEDS_MIDI_OUTPUT TRUE
-    ICON_BIG "${RSC_DIR}/dexedIcon.png"
-    ICON_SMALL "${RSC_DIR}/dexedIcon.png"
+    ICON_BIG "${RSC_DIR}/../themes/burgundy/ui/dexedIcon.png"
+    ICON_SMALL "${RSC_DIR}/../themes/burgundy/ui/dexedIcon.png"
     FORMATS ${FORMATS}
 )
 
@@ -140,7 +140,6 @@ juce_add_binary_data(${PROJECT_NAME}_BinaryData
     "${RSC_DIR}/Switch_96x52.png"
     "${RSC_DIR}/SwitchLighted_48x26.png"
     "${RSC_DIR}/dexed-logo.png"
-    "${RSC_DIR}/dexedIcon.png"
 )
 
 if(BUILD_VST2)
