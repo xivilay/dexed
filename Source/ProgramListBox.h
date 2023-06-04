@@ -21,7 +21,7 @@
 #ifndef PROGRAMLISTBOX_H_INCLUDED
 #define PROGRAMLISTBOX_H_INCLUDED
 
-#include "JuceHeader.h"
+#include <JuceHeader.h>
 #include "PluginData.h"
 
 class ProgramListBox;

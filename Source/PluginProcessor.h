@@ -21,9 +21,8 @@
 #ifndef PLUGINPROCESSOR_H_INCLUDED
 #define PLUGINPROCESSOR_H_INCLUDED
 
+#include <JuceHeader.h>
 #include <BinaryData.h>
-
-#include "../JuceLibraryCode/JuceHeader.hp
 
 #if __has_include(<clap-juce-extensions/clap-juce-extensions.h>)
     #include <clap-juce-extensions/clap-juce-extensions.h>

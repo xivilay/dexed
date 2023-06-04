@@ -21,7 +21,7 @@
 #ifndef SYSEXCOMM_H_INCLUDED
 #define SYSEXCOMM_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include <JuceHeader.h>
 
 class SysexComm {
     std::unique_ptr<MidiInput> input;

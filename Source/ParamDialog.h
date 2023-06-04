@@ -20,7 +20,7 @@
 #pragma once
 
 //[Headers]     -- You can add your own extra header files here --
-#include "JuceHeader.h"
+#include <JuceHeader.h>
 #include "msfa/controllers.h"
 #include "SysexComm.h"
 #include <functional>

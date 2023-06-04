@@ -21,7 +21,7 @@
 #ifndef PLUGINDATA_H_INCLUDED
 #define PLUGINDATA_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include <JuceHeader.h>
 
 #include <stdint.h>
 #include <string.h>
