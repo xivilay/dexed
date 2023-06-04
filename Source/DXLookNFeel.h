@@ -29,7 +29,7 @@ public:
 };
 
 
-class DXLookNFeel : public LookAndFeel_V3 {
+class DXLookNFeel : public LookAndFeel_V4 {
     HashMap<String, int> colourMap;
 
 public:
